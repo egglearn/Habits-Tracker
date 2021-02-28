@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  width: 500px;
+  max-width: 600px;
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 5px;
   color: darkblue;
@@ -39,7 +39,7 @@ h1 {
 
 #container {
   width: 500px;
-  height: 250px;
+  max-height: 700px;
   margin: 0 auto;
   margin-top: 20px;
   background: lightgreen;
