@@ -38,7 +38,7 @@ h1 {
 }
 
 #container {
-  width: 500px;
+  max-width: 600px;
   max-height: 700px;
   margin: 0 auto;
   margin-top: 20px;
