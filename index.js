@@ -21,6 +21,8 @@ let arr = localStorage.getItem("data" )? JSON.parse(localStorage.getItem("data")
 
 firstBox.addEventListener("click", function firstTick (){
     firstBox.textContent = "❌"
+    arr.push(1)
+    localStorage.setItem("data", JSON.stringify(arr))
     add()
 })
 
@@ -59,10 +61,18 @@ function display() {
 localStorage.setItem("data",JSON.stringify(arr))
 console.log(data)
 firstBox.textContent = JSON.parse(localStorage.getItem("data")).length > 0 ? "❌" : ""
-data.forEach(item => {
-    render() 
+// data.forEach(item => {
+//     render() 
 
-})
+// })
+
+
+for( var i = 1; i < data.length; i++){
+    render()
+}
+
+
+
 
 //needed the line below so that add runs and adds a new box ontop of the stored  boxes only if there are stored boxes, otherwise the event listener on the fist box will do the job
 if(firstBox.textContent) {
