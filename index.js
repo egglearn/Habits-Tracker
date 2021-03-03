@@ -21,6 +21,7 @@ let arr = localStorage.getItem("data" )? JSON.parse(localStorage.getItem("data")
 
 firstBox.addEventListener("click", function firstTick (){
     firstBox.textContent = "❌"
+    firstBox.classList.add("boxClick")
     arr.push(1)
     localStorage.setItem("data", JSON.stringify(arr))
     add()
@@ -39,6 +40,7 @@ let data = JSON.parse(localStorage.getItem("data"))
     // need this if statement otherwise you can click on a box with an x inside of it and it will add another box, which is problematic because it looks bad and when the page is refereshed the local storage is messed up because too many boxes have been pushed to arr
     if(newBox.textContent != "❌" ){
     newBox.textContent = "❌"
+    newBox.classList.add("boxClick")
     arr.push(1)
     localStorage.setItem("data", JSON.stringify(arr))
     add()}
@@ -50,6 +52,7 @@ let data = JSON.parse(localStorage.getItem("data"))
   function render (){
     let savedBox = document.createElement("div")
     savedBox.classList.add("box")
+    savedBox.classList.add("boxClick")
     container.appendChild(savedBox)
     savedBox.textContent = "❌"
     console.log(boxes.length)
@@ -61,6 +64,10 @@ function display() {
 localStorage.setItem("data",JSON.stringify(arr))
 console.log(data)
 firstBox.textContent = JSON.parse(localStorage.getItem("data")).length > 0 ? "❌" : ""
+
+if(firstBox.textContent == "❌"){
+    firstBox.classList.add("boxClick")
+}
 // data.forEach(item => {
 //     render() 
 
@@ -69,7 +76,7 @@ firstBox.textContent = JSON.parse(localStorage.getItem("data")).length > 0 ? "�
 
 for( var i = 1; i < data.length; i++){
     render()
-}
+} 
 
 
 
@@ -100,29 +107,3 @@ clearHistory.addEventListener("click", function clear(){
 
 display()
 // add()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
